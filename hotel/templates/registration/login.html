@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container-fluid" style="background-color:pink;height:100%">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="card card-body my-2">
+                <h3 class="text-info"> LOG IN</h3>
+                <form method="POST" class="form-horizontal">
+                    {%csrf_token%}
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="password">
+                    </div>
+                    <div class="form-group" style="width:100%">
+                        <button type="submit" class="btn btn-info">LOG IN</button>
+                    </div>
+                    <p class="text-center">Not Registered?<a href="{% url 'hotel:signup' %}">Register</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{%extends 'hotel/base.html'%}
+{%load crispy_forms_tags%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+{%block content%}
+<div class="container-fluid" style="background-color:pink;height:100%">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-info panel-body">
+                <h3 class="text-primary">{% if object %}Update Post{{post.post_name}}{%else%}New Post{%endif%}</h3>
+                <hr>
+                <form method="POST" enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {{form|crispy}}
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
